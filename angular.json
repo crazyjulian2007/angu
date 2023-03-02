@@ -25,12 +25,22 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/assets/applib/css/site.css.map",
+              "src/assets/applib/images/signin-image.jpg",
+              "src/assets/applib/images/signun-image.jpg"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/assets/applib/css/site.css",
+              "src/assets/applib/css/style.css",
+              "src/assets/applib/fonts/material-icon/css/material-design-iconic-font.min.css"
+
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/applib/js/jquery.min.js",
+              "src/assets/applib/js/jquery-ui.min.js"
+            ]
           },
           "configurations": {
             "production": {

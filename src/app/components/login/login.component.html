@@ -1,0 +1,56 @@
+<div class="container">
+  <div>
+    <div class="main" id="">
+
+      <!-- Sing in  Form -->
+      <section class="sign-in">
+        <div class="container">
+          <div class="signin-content">
+            <div class="signin-image">
+              <figure><img src="/assets/applib/images/signin-image.jpg" alt="sing up image"></figure>
+              <a href="/Logon" class="signup-image-link"> Create an account</a>
+            </div>
+
+            <div class="signin-form">
+              <h2 class="form-title">Sign in</h2>
+              <form class="register-form" >
+                <div class="form-group">
+                  <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                  <input type="text" name="acc_name" id="acc_name" placeholder="Your Name" [(ngModel)]="id" (ngModelChange)="id=$event"/>
+                </div>
+                <div class="" *ngIf="isId">
+                  <p style="color:red;">Account Name can not be empty</p>
+                </div>
+                <div class="form-group">
+                  <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
+                  <input type="password" name="acc_pwd" id="acc_pwd" placeholder="Password" [(ngModel)]="pwd" (ngModelChange)="pwd=$event"/>
+                </div>
+                <div class="" *ngIf="isPwd">
+                  <p style="color:red;">Account Password can not be empty</p>
+                </div>
+                <div class="form-group">
+                  <input type="checkbox" name="remember" id="remember-me" class="agree-term" />
+                  <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>
+                </div>
+                <div class="form-group form-button">
+                  <!-- <input type="" name="signin" id="signin" class="btn btn-info form-submit" value="Log in"
+                    (click)="change(id,pwd)" /> -->
+                  <button (click)="change(id ,pwd)" type="button"  class="btn btn-info form-submit">Log in</button>
+                </div>
+              </form>
+              <div class="social-login">
+                <span class="social-label">Or login with</span>
+                <ul class="socials">
+                  <li><a href="#"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
+                  <li><a href="#"><i class="display-flex-center zmdi zmdi-twitter"></i></a></li>
+                  <li><a href="#"><i class="display-flex-center zmdi zmdi-google"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
