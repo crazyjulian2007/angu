@@ -26,20 +26,29 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/assets/applib/css/site.css.map",
-              "src/assets/applib/images/signin-image.jpg",
-              "src/assets/applib/images/signun-image.jpg"
+              "src/assets/voltlib/css/volt.css.map",
+              "src/assets/img/illustrations/signin.svg"
             ],
             "styles": [
               "src/styles.scss",
-              "src/assets/applib/css/site.css",
-              "src/assets/applib/css/style.css",
-              "src/assets/applib/fonts/material-icon/css/material-design-iconic-font.min.css"
-
+              "src/assets/voltlib/vendor/sweetalert2/dist/sweetalert2.min.css",
+              "src/assets/voltlib/vendor/notyf/notyf.min.css",
+              "src/assets/voltlib/css/volt.css"
             ],
             "scripts": [
-              "src/assets/applib/js/jquery.min.js",
-              "src/assets/applib/js/jquery-ui.min.js"
+              "src/assets/voltlib/vendor/@popperjs/core/dist/umd/popper.min.js",
+              "src/assets/voltlib/vendor/bootstrap/dist/js/bootstrap.min.js",
+              "src/assets/voltlib/vendor/onscreen/dist/on-screen.umd.min.js",
+              "src/assets/voltlib/vendor/nouislider/dist/nouislider.min.js",
+              "src/assets/voltlib/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js",
+              "src/assets/voltlib/vendor/chartist/dist/chartist.min.js",
+              "src/assets/voltlib/vendor/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js",
+              "src/assets/voltlib/vendor/vanillajs-datepicker/dist/js/datepicker.min.js",
+              "src/assets/voltlib/vendor/sweetalert2/dist/sweetalert2.all.min.js",
+              "src/assets/voltlib/vendor/vanillajs-datepicker/dist/js/datepicker.min.js",
+              "src/assets/voltlib/vendor/notyf/notyf.min.js",
+              "src/assets/voltlib/vendor/simplebar/dist/simplebar.min.js",
+              "src/assets/voltlib/js/volt.js"
             ]
           },
           "configurations": {
@@ -47,8 +56,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -63,6 +72,41 @@
                 }
               ],
               "outputHashing": "all"
+            },
+            "uat": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "2mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.uat.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "ut": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.ut.ts"
+                }
+              ]
             },
             "development": {
               "buildOptimizer": false,
@@ -80,6 +124,12 @@
           "configurations": {
             "production": {
               "browserTarget": "loginfo:build:production"
+            },
+            "uat": {
+              "browserTarget": "loginfo:build:uat"
+            },
+            "ut": {
+              "browserTarget": "loginfo:build:ut"
             },
             "development": {
               "browserTarget": "loginfo:build:development"

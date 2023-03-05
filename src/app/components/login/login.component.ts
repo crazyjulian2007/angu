@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { UserinfoService } from 'src/app/services/userinfo.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,7 @@ export class LoginComponent implements OnInit {
   id = '';
   pwd = '';
 
-  constructor() { }
+  constructor(private route:Router) { }
 
   ngOnInit(): void {
     //this.isLogIn = true;

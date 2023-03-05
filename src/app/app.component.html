@@ -1,6 +1,7 @@
-
-
-<div class="container" *ngIf="!isLogIn">
+<div class="container" *ngIf="isLogOn">
+  <app-logon></app-logon>
+</div>
+<div class="container" *ngIf="!isLogIn && !isLogOn">
   <app-login [isLogIn]="isLogIn"></app-login>
 </div>
 <div class="container" *ngIf="isLogIn">
